@@ -9,7 +9,7 @@ let time = 0;
 let timer;
 let lastHole = 0;
 let points = 0;
-let difficulty = "hard";
+let difficulty = "normal";
 const song = new Audio("https://github.com/gabrielsanchez/erddiagram/blob/main/molesong.mp3?raw=true");
 
 /**
@@ -42,13 +42,13 @@ function randomInteger(min, max) {
  */
 function setDelay(difficulty) {
   // TODO: Write your code here.
-  if (difficulty.toLowerCase() === "easy") {
+  if (difficulty.toLowerCase() === 'easy') {
     return 1500
   }
-  else if (difficulty.toLowerCase() === "normal") {
+  else if (difficulty.toLowerCase() === 'normal') {
     return 1000
   }
-  else if (difficulty.toLowerCase() === "hard") {
+  else if (difficulty.toLowerCase() === 'hard') {
     return randomInteger(600, 1200)
   }
 
@@ -263,7 +263,6 @@ function setDuration(duration) {
 function stopGame(){
   // stopAudio(song);  //optional
   clearInterval(timer);
-  stopSong(song);
   return "game stopped";
 }
 
@@ -279,6 +278,7 @@ function startGame(){
   setEventListeners();
   startTimer();
   clearScore();
+  play();
   return "game started";
 }
 
@@ -290,6 +290,7 @@ function play() {
 }
 
 function playSong(audioObject) {
+  audioObject.loop = true;
   audioObject.play();
 }
 

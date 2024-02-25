@@ -4,19 +4,32 @@
   </head>
   <body>
     <h1 id="title">Whack-A-Mole Deluxe!</h1>
-    <div>
-      <div>
-        <h2>Click <button id="start">start</button> to play!</h2>
-      </div>
-      <div>
-        <h2>score: <span id="score">0</span></h2>
-      </div>
-      <div>
+    <div class="grid2">      
+      
+      <div class="item"></div>
+      
+      <div class="item">
+        <h2>Music Options:</h2>
+        <button onclick="play();">Play Song!</button>
+        <button onclick="stopSong(song);">Stop Song!</button>
+       </div>
+      
+      <div class="item"> 
+        <div>
+          <h2>Click <button id="start">start</button> to play!</h2>
+        </div>
+        <div>
+          <h2>score: <span id="score">0</span></h2>
+        </div>
+        <div>
           <h2><span id="timer">0</span> seconds left.</h2>
+        </div>
       </div>
+     
+      <div class="item"></div>
+      
     </div>
-    <button onclick="play();">Play Song!</button>
-    <button onclick="stopSong(song);">Stop Song!</button>
+    
 
     <div class="grid">
       <div id="hole0" class="hole">

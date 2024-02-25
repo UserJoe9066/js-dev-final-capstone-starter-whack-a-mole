@@ -10,6 +10,7 @@ let timer;
 let lastHole = 0;
 let points = 0;
 let difficulty = "hard";
+const song = new Audio("https://github.com/gabrielsanchez/erddiagram/blob/main/molesong.mp3?raw=true");
 
 /**
  * Generates a random integer within a range.
@@ -262,6 +263,7 @@ function setDuration(duration) {
 function stopGame(){
   // stopAudio(song);  //optional
   clearInterval(timer);
+  stopSong(song);
   return "game stopped";
 }
 
@@ -281,6 +283,19 @@ function startGame(){
 }
 
 startButton.addEventListener("click", startGame);
+
+
+function play() {
+  playSong(song);
+}
+
+function playSong(audioObject) {
+  audioObject.play();
+}
+
+function stopSong(audioObject) {
+  audioObject.pause();
+}
 
 
 // Please do not modify the code below.

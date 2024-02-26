@@ -263,7 +263,8 @@ function setDuration(duration) {
 function stopGame(){
   // stopAudio(song);  //optional
   clearInterval(timer);
-  alert(`Your score was ${points}! Thanks for playing my game!`)
+  // Line 267 breaks the tests for some reason, comment the line out and they should run. 
+  alert(`Your score was ${points}! Thanks for playing my game!`);
   return "game stopped";
 }
 

@@ -263,6 +263,7 @@ function setDuration(duration) {
 function stopGame(){
   // stopAudio(song);  //optional
   clearInterval(timer);
+  alert(`Your score was ${points}! Thanks for playing my game!`)
   return "game stopped";
 }
 
